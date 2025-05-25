@@ -1,0 +1,343 @@
+/* i use the inder font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #F7F7F2;
+}
+
+
+nav {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    background-color: #F7F7F2;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.037);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-left: 50px;
+}
+
+.logo h4 {
+    margin-left: 8px;
+    font-size: 22px;
+}
+
+.hero1 {
+    width: 100%;
+    margin: 160px auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.hero1 img {
+    width: 480px;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    width: 100%;
+}
+
+.hero-text p {
+    margin-top: 8px;
+    font-size: 20px;
+    color: #00000082;
+    width: 100%;
+}
+
+.type-translate {
+    display: none;
+}
+
+.choosing-type {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+}
+
+.choosing-type form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.choose-type {
+    background-color: #f8f8f6;
+    border: 1px solid #288B80;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.choose-type:hover {
+    background-color: #288b7f24;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #288B80;
+    border: 1px solid #465e5b;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        margin-left: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero1 {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 140px;
+    }
+
+    .choosing-type {
+        width: 95%;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+
+    .choose-type {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 15px;
+    }
+
+    .logo h4 {
+        font-size: 18px;
+    }
+
+    .choose-type {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .hero-text h1 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+
+.translator-container-text {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  max-width: 100%;
+  /* border: 1px solid #cce2dd; */
+  border-radius: 8px;
+  /* background-color: #e5f3f0; */
+  padding: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #288b7f8c;
+  border-radius: 5px;
+  background-color: #e5f3f0;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid #cce2dd;
+  border-radius: 5px;
+  resize: none;
+  font-size: 14px;
+  background-color: white;
+  color: #333;
+}
+
+textarea::placeholder {
+  color: #999;
+}
+
+.swap-btn {
+  font-size: 24px;
+  margin-top: 65px;
+  color: #333;
+  user-select: none;
+  background-color: #92cdc62d;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .translator-container-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .swap-btn {
+    transform: rotate(90deg);
+    margin: 20px 0;
+  }
+}
+
+
+
+
+
+
+/* for vc rec */
+.translator-container-voice {
+    align-self: center;
+  display: none;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.voice-recorder {
+  background-color: #1abc9c;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s;
+  position: relative;
+}
+
+.voice-recorder:hover {
+  background-color: #17a589;
+  transform: scale(1.03);
+}
+
+.voice-recorder.recording {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 188, 156, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(26, 188, 156, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(26, 188, 156, 0);
+  }
+}
+
+
+/* for img translate */
+
+.translator-container-image {
+  display: none;
+  justify-content: center;
+  margin-top: 30px;
+  align-self: center;
+}
+
+.image-upload-box {
+  background-color: #e5f3f0;
+  border: 2px dashed #1abc9c;
+  border-radius: 12px;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #1abc9c;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-upload-box:hover {
+  background-color: #d1f0ea;
+  transform: scale(1.02);
+}
+
+.image-upload-box i {
+  font-size: 36px;
+}
+
+#uploadText {
+  font-weight: 500;
+}

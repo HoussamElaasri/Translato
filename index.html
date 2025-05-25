@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/images/fav.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Translato</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img height="50px" src="images/logo.png" alt="">
+            <h4>Translato</h4>
+        </div>
+
+    </nav>
+
+
+
+    <section class="hero1">
+        <div class="hero-text">
+            <h1>AI-Powered Translator</h1>
+            <p>You can now translate texts, images, and audio easily and accurately with the help of artificial
+                intelligence</p>
+        </div>
+        <img src="images/hero1.png" alt="">
+
+    </section>
+    <section class="choosing-type">
+        <form>
+            <input type="radio" checked name="type-translate" class="type-translate" id="text-translator">
+            <label class="choose-type" for="text-translator" onclick="textTranslator()">Text</label>
+
+            <input type="radio" name="type-translate" class="type-translate" id="voice-translator">
+            <label class="choose-type" for="voice-translator" onclick="voiceTranslator()">Voice</label>
+
+            <input type="radio" name="type-translate" class="type-translate" id="image-translator">
+            <label class="choose-type" for="image-translator" onclick="imageTranslator()">Image</label>
+        </form>
+    </section>
+
+
+
+
+
+
+
+    <div class="translator-container-text">
+        <div class="translator-container-image">
+            <label for="imageUpload" class="image-upload-box">
+                <i class="fa-solid fa-image"></i>
+                <span id="uploadText">Click to upload an image</span>
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+            </label>
+        </div>
+        <div class="translator-container-voice">
+            <div id="voiceRecorder" class="voice-recorder recording">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Start Recording</span>
+            </div>
+        </div>
+        <div class="box">
+            <select>
+                <option selected value="en">English</option>
+                <option value="fr">French</option>
+                <option value="ar">Arabic</option>
+            </select>
+
+            <textarea id="input-text" placeholder="Type here..."></textarea>
+        </div>
+
+        <div class="swap-btn">
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </div>
+
+        <div class="box">
+            <select>
+                <option value="en">English</option>
+                <option selected value="fr">French</option>
+                <option value="ar">Arabic</option>
+            </select>
+            <textarea readonly id="output-text" placeholder="Translated text"></textarea>
+        </div>
+
+    </div>
+
+</body>
+<script src="js/script.js"></script>
+
+</html>
