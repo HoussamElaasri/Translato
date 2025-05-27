@@ -65,7 +65,7 @@ function voiceTranslator() {
     translator_voice.style.display = "flex"
     input_text.placeholder = "Modify text..."
     cleartext()
-    
+
     input_text.removeAttribute("onkeyup")
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
@@ -77,7 +77,7 @@ function voiceTranslator() {
 
 
     recognition.lang = input_lang_option
-    console.log("language selected : "+recognition.lang)
+    console.log("language selected : " + recognition.lang)
 
     recognition.interimResults = true
     recognition.continuous = false
@@ -102,7 +102,7 @@ function voiceTranslator() {
     }
 
 
-        
+
     voiceRecorder.addEventListener("click", async () => {
         const ok = await checkMicrophonePermission()
         if (!ok) return
@@ -145,9 +145,57 @@ function imageTranslator() {
     translator_image.style.display = "flex"
     translator_voice.style.display = "none"
     input_text.placeholder = "Modify text..."
+    let status = document.getElementById("uploadText")
+    status.innerText = "Click to upload an image"
 
     cleartext()
+    const imageinput = document.getElementById("imageUpload")
+    
+    imageinput.onchange = () => {
+        if (!imageinput.files.length) {
+            alert("Please upload an image")
+            return
+        }
+        
+        let language = document.getElementById("input_lang_option").value
+        var lang
+        switch(language){
+            case "en":
+                lang = "eng"
+                break
+            
+            case "fr":
+                lang = "fra"
+                break
+            
+            case "ar":
+                lang = "ara"
+                break
+            default :
+                alert("you should choose a language !")
+                return
+       }
+        console.log(`lang est : ${lang}`)
+        const image = imageinput.files[0]
+
+        Tesseract.recognize(
+            image,
+            lang,
+            {
+                logger: m => status.textContent = `${Math.round(m.progress * 100)}%`
+            }
+        ).then(({ data: { text } }) => {
+            input_text.value = text
+            status.textContent = "Done!, Click to upload an image"
+            apitranslate()
+        }).catch(err => {
+            status.textContent = "Error, Click to upload an image " + err.message
+        })
+    }
+
 }
+
+
 
 
 
