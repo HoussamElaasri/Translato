@@ -4,7 +4,7 @@ Welcome to **Translato**, a modern and responsive AI-powered translation interfa
 
 ## 🚀 Features
 
-* 🎤 **Voice Translation** — Record and transcribe voice for instant translation.
+* 🎤 **Voice Translation** — Record and transcribe voice for instant translation (Available only on Google Chrome and Microsoft Edge browsers).
 * 🖼️ **Image Translation** — Upload images containing text and translate the contents.
 * 📝 **Text Translation** — Direct text input with support for multiple languages.
 * 🔄 **Swap Functionality** — Easily swap between source and target languages.
