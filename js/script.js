@@ -36,12 +36,24 @@ async function apitranslate() {
     else {
         output_text.style.textAlign = "left"
     }
+    if (input_lang_option == "ar") {
+        input_text.style.textAlign = "right"
+    }
+    else {
+        input_text.style.textAlign = "left"
+    }
     var input_val = input_text.value
     const translated = await translateMyMemory(input_val, input_lang_option, output_lang_option)
     output_text.value = translated
     console.log("apitranslate called")
 
+    
+
 }
+
+document.getElementById("output_lang_option").addEventListener("change", () => {
+    apitranslate()
+})
 
 
 function cleartext() {
@@ -74,7 +86,6 @@ function voiceTranslator() {
 
 
     let input_lang_option = document.getElementById("input_lang_option").value
-
 
     recognition.lang = input_lang_option
     console.log("language selected : " + recognition.lang)
@@ -126,6 +137,9 @@ function voiceTranslator() {
         recognition.start()
     })
 }
+
+
+
 
 async function checkMicrophonePermission() {
     try {
@@ -198,8 +212,21 @@ function imageTranslator() {
 
 
 
+document.getElementById("swapbtn").addEventListener("click", () => {
+    
+    const inputLang = document.getElementById("input_lang_option")
+    const outputLang = document.getElementById("output_lang_option")
+    const tempLang = inputLang.value
+    inputLang.value = outputLang.value
+    outputLang.value = tempLang
 
+    
+    const tempText = input_text.value
+    input_text.value = output_text.value
+    output_text.value = tempText
 
+    
+})
 
 
 
